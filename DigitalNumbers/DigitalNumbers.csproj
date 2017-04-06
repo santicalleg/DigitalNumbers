@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Classes\Helpers\Validator.cs" />
     <Compile Include="Business\DigitalNumberService.cs" />
     <Compile Include="Business\Numbers\BaseNumber.cs" />
     <Compile Include="Business\Numbers\INumber.cs" />

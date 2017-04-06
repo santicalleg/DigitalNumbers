@@ -1,4 +1,5 @@
-﻿using DigitalNumbers.Numbers;
+﻿using DigitalNumbers.Business.Classes.Helpers;
+using DigitalNumbers.Numbers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,9 @@ namespace DigitalNumbers.Business
 			GenerateDigitalNumbers(IEnumerable<string> userInput)
 		{
 			var list = new List<string[,]>();
+
+			Validator.ValidateUserInputs(userInput);
+
 			var splitList = SplitList(userInput);
 
 			foreach (var item in splitList)
@@ -91,15 +95,12 @@ namespace DigitalNumbers.Business
 				}
 
 				var numberResult = service.GenerateDigitalNumber();
-				int colsArray = colIndex;
 				for (int i = 0; i < numberResult.GetLength(0); i++)
 				{
 					for (int j = 0; j < numberResult.GetLength(1); j++)
 					{
-						array[i, colsArray] = numberResult[i, j];
-						colsArray++;
+						array[i, j + colIndex] = numberResult[i, j];
 					}
-					colsArray = colIndex;
 				}
 
 				colIndex += cols;
