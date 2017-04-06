@@ -31,25 +31,23 @@ namespace DigitalNumbers
 
             var service = new DigitalNumberService();
 
-            var result = service.GenerateDigitalNumbers(userInputs);
+			var result = service.GenerateDigitalNumbers(userInputs);
 
-            foreach (var item in result)
-            {
-                foreach (var numberArray in item)
-                {
-                    for (int i = 0; i < numberArray.GetLength(0); i++)
-                    {
-                        for (int j = 0; j < numberArray.GetLength(1); j++)
-                        {
-                            Console.Write(numberArray[i, j] ?? " ");
-                        }
-                        Console.WriteLine();
-                    }
-                }
-                Console.WriteLine("---------------------------");
-            }       
+			foreach (var item in result)
+			{
+				for (int i = 0; i < item.GetLength(0); i++)
+				{
+					for (int j = 0; j < item.GetLength(1); j++)
+					{
+						Console.Write(item[i, j] ?? " ");
+					}
+					Console.WriteLine();
+				}
 
-            Console.WriteLine("Press enter to exit");
+				Console.WriteLine();
+			}
+
+			Console.WriteLine("Press enter to exit");
             Console.ReadLine();
         }
     }
