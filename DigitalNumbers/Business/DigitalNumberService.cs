@@ -1,14 +1,11 @@
 ﻿using DigitalNumbers.Business.Classes.Helpers;
 using DigitalNumbers.Numbers;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DigitalNumbers.Business
 {
-    class DigitalNumberService
+	public class DigitalNumberService
     {
 		public IEnumerable<string[,]>
 			GenerateDigitalNumbers(IEnumerable<string> userInput)
